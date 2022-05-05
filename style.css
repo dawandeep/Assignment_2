@@ -4,6 +4,11 @@
     font-size: 18px;
     font-family: 'Poppins', sans-serif;
 }
+/*for error messages*/
+.error{
+    color: red;
+    font-size: 14px;
+}
 /*header*/
 .heaaa{
     background-color :#ececec;
