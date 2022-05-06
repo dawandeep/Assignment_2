@@ -18,6 +18,12 @@ $(document).ready(() =>
         required: true,
         validMail: true,
       },
+      message:
+      {
+          required:true,
+          validUserMessage:true,
+          minlength:40
+      }
     },
     messages: {
       name: {
@@ -27,7 +33,20 @@ $(document).ready(() =>
       email: {
         required: "Please enter your email address",
       },
+      message:
+      {
+          required:"Please enter the message"
+      }
     },
+
+
+    submitHandler:function(form)
+    {
+        alert("You are being redirected");
+        window.location.href="https://lng-consultancy.com";
+    }
+
+
   })
 );
 $.validator.addMethod(
@@ -50,3 +69,12 @@ $.validator.addMethod(
   },
   "Please enter a valid email"
 );
+
+//Code for Message validation
+$.validator.addMethod("validUserMessage", function(value)
+    {
+        value=value.trim();
+        var regMsg = /[a-z A-z0-9\.!@#$%^&*()_+}{":';?,}]$/i;
+        var validMessage=regMsg.test(value); 
+        return validMessage;
+    },"Please Enter at least 40 characters");
